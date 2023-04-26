@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-const textColor = {
-    color: '#3299bc'
-}
+
 export default function Navbar(props) {
     return (
         <div>
@@ -16,11 +14,11 @@ export default function Navbar(props) {
                 }`
             }>
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/"
-                        style={textColor}>
-                        {
+                    <Link className="navbar-brand me-2 " to="/"
+                        style={{color: '#3299bc'}}>
+                        <strong>{
                         props.title
-                    }</Link>
+                    }</strong></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -32,7 +30,7 @@ export default function Navbar(props) {
                                     props.home
                                 }</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item ">
                                 <Link className="nav-link" aria-current="page" to="/about">
                                     {
                                     props.about

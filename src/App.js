@@ -12,12 +12,15 @@ function App() {
     return (
         <>
             <BrowserRouter>
-                <Navbar mode={'light'}/>
+                <Navbar mode={'dark'}/>
                 <Routes>
                     <Route exact path="/"
                         element={<Login/>}/>
                     <Route exact path="/create-user"
-                        element={<CreateUser/>}/>
+                        element={
+                            <div
+                        className='container my-3'><CreateUser/></div>
+                        }/>
                     <Route exact path="/about"
                         element={<About/>}/>
                 </Routes>
