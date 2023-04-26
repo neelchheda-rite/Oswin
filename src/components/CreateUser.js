@@ -1,24 +1,15 @@
-import {TextField} from '@mui/material'
+import {Select, TextField, InputLabel, Button} from '@mui/material'
 import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
+import {Link} from 'react-router-dom';
 
-const currencies = [
-    {
-        value: 'USD',
-        label: '$'
-    }, {
-        value: 'EUR',
-        label: '€'
-    }, {
-        value: 'BTC',
-        label: '฿'
-    }, {
-        value: 'JPY',
-        label: '¥'
-    },
-];
 
 export default function CreateUser() {
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
     return (
         <>
             <div>
@@ -39,29 +30,15 @@ export default function CreateUser() {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <TextField margin="normal" required fullWidth label="Full Name" autoFocus/>
+                            <TextField margin="normal" required fullWidth label="Email" autoFocus/>
                         </div>
-                        <div className="col">
-                            <TextField margin="normal" required fullWidth label="Phone Number"/>
+                        <div className="col" style={{ display: 'flex', justifyContent: 'left', alignItems:"left"}}>
+                        <Button margin="normal" variant="text">Verify OTP</Button>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col">
-                            <TextField id="standard-select-currency" select label="Select" defaultValue="EUR" helperText="Please select your currency" variant="standard">
-                                {
-                                currencies.map((option) => (
-                                    <MenuItem key={
-                                            option.value
-                                        }
-                                        value={
-                                            option.value
-                                    }>
-                                        {
-                                        option.label
-                                    } </MenuItem>
-                                ))
-                            } </TextField>
-                        </div>
+                        <div className="col my-2"></div>
+                        <div className="col"></div>
                     </div>
                 </div>
             </div>
