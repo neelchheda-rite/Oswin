@@ -1,16 +1,11 @@
-import {Select, TextField, InputLabel, Button} from '@mui/material'
+import { TextField, Button} from '@mui/material'
 import React from 'react';
-import MenuItem from '@mui/material/MenuItem';
-import {Link} from 'react-router-dom';
+
 import "../Css/Login.css";
 
 
 export default function CreateUser() {
-    const [age, setAge] = React.useState('');
-
-    const handleChange = (event) => {
-        setAge(event.target.value);
-    };
+    
     return (
         <>
             <div>

@@ -14,7 +14,7 @@ export default function Navbar(props) {
                 }`
             }>
                 <div className="container-fluid">
-                    <Link className="navbar-brand me-2 " to="/"
+                    <Link className="navbar-brand" to="/"
                         style={{color: '#3299bc'}}>
                         <strong>{
                         props.title

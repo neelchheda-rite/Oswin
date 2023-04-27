@@ -26,7 +26,7 @@
 //                     </button>
 //                 </div>
 //                 <p className="forgot-password text-right my-2">
-//                     <a href="/"> Forgot password?</a>
+//                     <a to="/"> Forgot password?</a>
 //                 </p>
 //             </form>
 //         )
@@ -52,12 +52,7 @@ import { useNavigate } from 'react-router-dom';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright ©'}
-      <Link color="inherit" href="https://mui.com/">
-        Oswin
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      Copyright © Oswin 2023.
     </Typography>
   );
 }
@@ -69,8 +64,8 @@ export default function SignInSide() {
   const navigate=useNavigate();
 
   const navigateToContacts = () => {
-    // 👇️ navigate to /contacts
-    navigate('/create-user');
+   
+    navigate('/user');
   };
 
   const handleSubmit = (event) => {
@@ -84,7 +79,7 @@ export default function SignInSide() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100dvh'}} >
+      <Grid container component="main" sx={{ height: '100vh'}} >
         <CssBaseline />
         <Grid
           item
@@ -149,12 +144,12 @@ export default function SignInSide() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link to="/" variant="body2">
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link to="/" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

@@ -39,6 +39,12 @@ export default function Navbar(props) {
                                     props.report
                                 } </Link>
                             </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link" aria-current="page" to="/user/projections">
+                                    {
+                                    props.projections
+                                } </Link>
+                            </li>
                         </ul>
 
                     </div>
@@ -51,11 +57,13 @@ export default function Navbar(props) {
 Navbar.propTypes = {
     title: PropTypes.string,
     projects: PropTypes.string,
-    report: PropTypes.string
+    report: PropTypes.string,
+    projections: PropTypes.string
 }
 
 Navbar.defaultProps = {
     title: "Oswin",
     projects: "Projects",
-    report: "Report"
+    report: "Report",
+    projections: "Projections"
 }
