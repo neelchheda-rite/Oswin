@@ -2,8 +2,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
-
 import InputLabel from '@mui/material/InputLabel';
+import {TextField} from '@mui/material';
 
 
 export default function Summary() {
@@ -89,6 +89,15 @@ export default function Summary() {
                         <MenuItem value={30}>December</MenuItem>
                     </Select>
 
+                </FormControl>
+                <FormControl sx={
+                    {
+                        m: 2,
+                        minWidth: 250
+                    }
+                }>
+
+                    <TextField id="standard-search" label="Search field" type="search" variant="standard"/>
                 </FormControl>
             </div>
 
