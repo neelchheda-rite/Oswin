@@ -15,7 +15,6 @@ function App() {
         <>
             <BrowserRouter>
                 <Routes>
-                    {/* <Navbar mode={'dark'}/> */}
                     <Route exact path="/"
                         element={
                             <>
@@ -23,14 +22,7 @@ function App() {
                                 <Login/>
                             </>
                         }/>
-                    {/* <Route exact path="/create-user"
-                        element={
-                            <>
-                            <Navbar mode={'dark'}/>
-                            <div
-                        className='container my-3'><CreateUser/></div>
-                        </>
-                        }/> */}
+                    
                     <Route exact path="/about"
                         element={<About/>}/>
                     <Route exact path="/user"
