@@ -35,8 +35,8 @@ function App() {
                         element={<About/>}/>
                     <Route exact path="/user"
                         element={
-                        <>
-                        <UserNavbar mode={'dark'}/>
+                        <> 
+                        <UserNavbar mode={'dark'} />
                         <SideBar />
                         </>
                         }/>
