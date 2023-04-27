@@ -4,6 +4,7 @@ import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import {TextField} from '@mui/material';
+import Button from '@mui/material/Button';
 
 
 export default function Summary() {
@@ -22,7 +23,7 @@ export default function Summary() {
                     sx={
                         {
                             m: 2,
-                            minWidth: 250
+                            minWidth: 170
                         }
                 }>
                     <InputLabel id="demo-simple-select-required-label">Customer</InputLabel>
@@ -43,7 +44,7 @@ export default function Summary() {
                     sx={
                         {
                             m: 2,
-                            minWidth: 250
+                            minWidth: 170
                         }
                 }>
                     <InputLabel id="demo-simple-select-required-label">Item</InputLabel>
@@ -64,7 +65,7 @@ export default function Summary() {
                     sx={
                         {
                             m: 2,
-                            minWidth: 250
+                            minWidth: 170
                         }
                 }>
                     <InputLabel id="demo-simple-select-required-label">Month</InputLabel>
@@ -93,12 +94,31 @@ export default function Summary() {
                 <FormControl sx={
                     {
                         m: 2,
-                        minWidth: 250
+                        minWidth: 170
                     }
                 }>
 
                     <TextField id="standard-search" label="Search field" type="search" variant="standard"/>
                 </FormControl>
+                <FormControl sx={
+                    {
+                        m: 2,
+                        minWidth: 170
+                    }
+                }>
+
+                    <Button variant="contained">Search</Button>
+                </FormControl>
+                <FormControl sx={
+                    {
+                        m: 2,
+                        minWidth: 170
+                    }
+                }>
+
+                    <Button variant="contained">Add Projection</Button>
+                </FormControl>
+
             </div>
 
 
