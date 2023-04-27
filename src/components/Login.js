@@ -146,6 +146,7 @@ export default function SignInSide() {
               
                 <Grid item xs>
                   <Link to="/" variant="body2">
+                    
                     Forgot password?
                   </Link>
                 </Grid>
@@ -153,7 +154,7 @@ export default function SignInSide() {
                   <Link to="/" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
-                  
+
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
