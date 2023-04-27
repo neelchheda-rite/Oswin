@@ -10,28 +10,28 @@ export const SideBarData=[
     {
         title:"Home",
         icon:<HomeIcon />,
-        link:"/"
+        link:"home"
     },
     {
         title:"Dashboard",
         icon:<DashboardIcon />,
-        link:"/"
+       link:"dashboard"
     },{
-        title:"Report",
+        title:"Summary",
         icon:<SummarizeIcon />,
-        link:"/"
+       link:"summary"
     },{
         title:"Location",
         icon:<LocationOnIcon />,
-        link:"/"
+       link:"location"
     },{
         title:"Vendor",
         icon:<PersonIcon />,
-        link:"/"
+       link:"vendor"
     },{
         title:"Help",
         icon:<HelpIcon />,
-        link:"/"
+       link:"help"
     }
 ];
 

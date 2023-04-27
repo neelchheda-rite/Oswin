@@ -6,11 +6,16 @@ import Navbar from './components/Navbar';
 import UserNavbar from './components/User/Navbar';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SideBar from './components/User/SideBar';
+import { SideBarData } from './components/Data/SideBarData';
 
 
 function App() {
     const mode='dark'
-
+    const routes = SideBarData.map((val) => {
+        return (
+            <Route  exact path={val.link} element={<val.title />} />
+        );
+    });
     return (
         <>
             <BrowserRouter>
@@ -31,7 +36,9 @@ function App() {
                         <UserNavbar mode={mode} />
                         <SideBar mode={mode} />
                         </>
-                        }/>
+                        }>
+                        <Route>{routes}</Route>  
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </>
