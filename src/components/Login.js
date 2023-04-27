@@ -153,6 +153,7 @@ export default function SignInSide() {
                   <Link to="/" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
+                  
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
