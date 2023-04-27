@@ -21,8 +21,8 @@ export default function Summary() {
                 <FormControl required
                     sx={
                         {
-                            m: 1,
-                            minWidth: 200
+                            m: 2,
+                            minWidth: 250
                         }
                 }>
                     <InputLabel id="demo-simple-select-required-label">Customer</InputLabel>
@@ -36,6 +36,57 @@ export default function Summary() {
                         <MenuItem value={10}>Ten</MenuItem>
                         <MenuItem value={20}>Twenty</MenuItem>
                         <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+
+                </FormControl>
+                <FormControl required
+                    sx={
+                        {
+                            m: 2,
+                            minWidth: 250
+                        }
+                }>
+                    <InputLabel id="demo-simple-select-required-label">Item</InputLabel>
+                    <Select labelId="demo-simple-select-required-label" id="demo-simple-select-required"
+                        value={customer}
+                        label=" Item"
+                        onChange={handleChange}>
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+
+                </FormControl>
+                <FormControl required
+                    sx={
+                        {
+                            m: 2,
+                            minWidth: 250
+                        }
+                }>
+                    <InputLabel id="demo-simple-select-required-label">Month</InputLabel>
+                    <Select labelId="demo-simple-select-required-label" id="demo-simple-select-required"
+                        value={customer}
+                        label=" Month"
+                        onChange={handleChange}>
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>January</MenuItem>
+                        <MenuItem value={20}>February</MenuItem>
+                        <MenuItem value={30}>March</MenuItem>
+                        <MenuItem value={30}>April</MenuItem>
+                        <MenuItem value={30}>May</MenuItem>
+                        <MenuItem value={30}>June</MenuItem>
+                        <MenuItem value={30}>July</MenuItem>
+                        <MenuItem value={30}>August</MenuItem>
+                        <MenuItem value={30}>September</MenuItem>
+                        <MenuItem value={30}>October</MenuItem>
+                        <MenuItem value={30}>November</MenuItem>
+                        <MenuItem value={30}>December</MenuItem>
                     </Select>
 
                 </FormControl>
