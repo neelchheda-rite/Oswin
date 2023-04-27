@@ -9,7 +9,7 @@ import SideBar from './components/User/SideBar';
 
 
 function App() {
-
+    const mode='dark'
 
     return (
         <>
@@ -19,7 +19,7 @@ function App() {
                     <Route exact path="/"
                         element={
                             <>
-                                <Navbar mode={'dark'}/>
+                                <Navbar mode={mode}/>
                                 <Login/>
                             </>
                         }/>
@@ -36,8 +36,8 @@ function App() {
                     <Route exact path="/user"
                         element={
                         <> 
-                        <UserNavbar mode={'dark'} />
-                        <SideBar />
+                        <UserNavbar mode={mode} />
+                        <SideBar mode={mode} />
                         </>
                         }/>
                 </Routes>
