@@ -2,6 +2,7 @@ import {Select, TextField, InputLabel, Button} from '@mui/material'
 import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import {Link} from 'react-router-dom';
+import "../Css/Login.css";
 
 
 export default function CreateUser() {
@@ -37,9 +38,20 @@ export default function CreateUser() {
                         </div>
                     </div>
                     <div className="row">
+                        <div className="col">
+                            <TextField margin="normal" type="password" required fullWidth label="Password" autoFocus/>
+                        </div>
+                        <div className="col">
+                            <TextField margin="normal" type="password" required fullWidth label="Confirm Password"/>
+                        </div>
+                    </div>
+                    <div className="row">
                         <div className="col my-2"></div>
                         <div className="col"></div>
                     </div>
+                    <div className="col" style={{ display: 'flex', justifyContent: 'center', alignItems:"left"}}>
+                        <Button margin="normal" variant="contained">Create User</Button>
+                        </div>
                 </div>
             </div>
 
