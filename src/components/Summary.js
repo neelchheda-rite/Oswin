@@ -6,6 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import {TextField} from '@mui/material';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import { useTable } from 'react-table';
 
 
 export default function Summary() {
@@ -30,6 +31,9 @@ export default function Summary() {
     useEffect(()=>{
         fetchData();
     },[]);
+
+    
+     const tableInstance = useTable({});
 
     return (
         <>
@@ -127,7 +131,7 @@ export default function Summary() {
 
                     <Button variant="contained">Add Projection</Button>
                 </FormControl>
-
+                
             </div>
             
                 
