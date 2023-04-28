@@ -36,7 +36,7 @@ function App() {
             <Route exact path='/testing' element={<><Testing /></>} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
-        <ToastContainer  autoClose={2000}/>
+        <ToastContainer pauseOnHover="false" autoClose={1500}/>
       </BrowserRouter>
     </>
   );

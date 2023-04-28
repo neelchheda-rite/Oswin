@@ -42,7 +42,7 @@ export default function Summary() {
             setProducts(productfromAPI);
         }
     };
-
+    
     // const data = useMemo(() => ([...products]), [products])
     // const columns = useMemo(() => [
     //     {
@@ -57,6 +57,7 @@ export default function Summary() {
     //     }
     // ], [])
 const productData = useMemo(() => [...products], [products]);
+
 const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filter((key) => 
     key !== 'rating' && key !== 'image'
 ).map((key) => {
@@ -65,8 +66,16 @@ const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filte
         accessor: key
     }
 }) : [], [products])
-
-    const tableInstance = useTable({columns:productColumn, data: productData});
+    const tableHooks=(hooks)=>{
+        hooks.visibleColumns.unshift((columns)=>[
+            {
+                id:"Check",
+                Header:"Check",
+                Cell:({row})=>(<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />)
+            },...columns
+        ])
+    }
+    const tableInstance = useTable({columns:productColumn, data: productData},tableHooks);
     const {
         getTableProps,
         getTableBodyProps,
