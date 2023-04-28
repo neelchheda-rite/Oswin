@@ -9,6 +9,7 @@ import SideBar from './components/User/SideBar';
 import { SideBarData } from './components/Data/SideBarData';
 import React from 'react';
 import Summary from './components/Summary';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route exact path='/test/summary' element={<><UserNavbar mode={mode} /><Summary /></>} />+
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
+        <ToastContainer  autoClose={2000}/>
       </BrowserRouter>
     </>
   );

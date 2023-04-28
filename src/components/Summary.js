@@ -98,7 +98,7 @@ export default function Summary() {
                     }
                 }>
 
-                    <TextField id="standard-search" label="Search field" type="search" variant="standard"/>
+                    <TextField id="standard-search" label="Year" type="search" variant="standard"/>
                 </FormControl>
                 <FormControl sx={
                     {

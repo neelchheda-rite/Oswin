@@ -65,14 +65,18 @@ export default function SignInSide() {
 
     const navigate = useNavigate();
 
-    const navigateToContacts = () => {
-      toast.success('Log in Successful', {position: toast.POSITION.TOP_RIGHT});
-       setTimeout(() => {
-        navigate('/user');
-      }, "500");
+    const navigateTo = () => {
+      if (!toast.isActive('log_in_success')) {
+        toast.success('Log in Successful!', {
+          position: toast.POSITION.TOP_RIGHT,
+          toastId: 'log_in_success',
+        });
+      }
+      navigate('/user');
+        
     };
 
-  
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -140,11 +144,13 @@ export default function SignInSide() {
                                         mb: 2
                                     }
                                 }
-                                onClick={navigateToContacts}>
+                                onClick={navigateTo}>
                                 Sign In
                             </Button>
-                           
-                            <ToastContainer/>
+
+                            <ToastContainer position="top-right"
+                                
+                                />
                             <Grid container>
 
                                 <Grid item xs>

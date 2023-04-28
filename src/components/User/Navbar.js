@@ -47,12 +47,7 @@ export default function Navbar(props) {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to="/user/projects">
-                                    {
-                                    props.projects
-                                }</Link>
-                            </li>
+                            
                             <li className="nav-item ">
                                 <Link className="nav-link" aria-current="page" to="/user/report">
                                     {
@@ -154,14 +149,14 @@ export default function Navbar(props) {
 
 Navbar.propTypes = {
     title: PropTypes.string,
-    projects: PropTypes.string,
+   
     report: PropTypes.string,
     projections: PropTypes.string
 }
 
 Navbar.defaultProps = {
     title: "Oswin",
-    projects: "Projects",
+    
     report: "Report",
     projections: "Projections"
 }
