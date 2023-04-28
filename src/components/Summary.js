@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
 import axios from 'axios';
-import {useTable} from 'react-table';
+import { useTable} from 'react-table';
 
 
 export default function Summary() {
@@ -34,37 +34,45 @@ export default function Summary() {
 
         const response = await axios.get('https://fakestoreapi.com/products').catch(err => console.log(err));
         if (response) {
-            const products = response.data;
-            console.log("Products : ", products);
-            setProducts(products);
+            const productfromAPI = response.data;
+            console.log("Products : ", productfromAPI);
+            setProducts(productfromAPI);
         }
     };
 
-    const data = useMemo(() => ([{
-            "id": 1,
-            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-            "price": 109.95,
-            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-            "category": "men's clothing",
-            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-            "rating": {
-                "rate": 3.9,
-                "count": 120
-            }
-        }]), [])
-    const columns = useMemo(() => [
-        {
-            Header: "Id",
-            accessor: "id"
-        }, {
-            Header: "Price",
-            accessor: "price"
-        }, {
-            Header: "Description",
-            accessor: "description"
-        }
-    ], [])
-    const tableInstance = useTable({columns, data});
+    // const data = useMemo(() => ([...products]), [products])
+    // const columns = useMemo(() => [
+    //     {
+    //         Header: "Id",
+    //         accessor: "id"
+    //     }, {
+    //         Header: "Price",
+    //         accessor: "price"
+    //     }, {
+    //         Header: "Description",
+    //         accessor: "description"
+    //     }
+    // ], [])
+const productData = useMemo(() => [...products], [products]);
+const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filter((key) => 
+    key !== 'rating' && key !== 'image'
+).map((key) => {
+    return {
+        Header: key[0].toUpperCase() + key.substring(1),
+        accessor: key
+    }
+}) : [], [products])
+
+
+
+
+
+
+
+
+
+
+    const tableInstance = useTable({columns:productColumn, data: productData});
     const {
         getTableProps,
         getTableBodyProps,
@@ -174,7 +182,7 @@ export default function Summary() {
                     }
                 }>
 
-                    <Button variant="contained" className='buttonSummary'>Search</Button>
+                    <Button variant="contained" >Search</Button>
                 </FormControl>
                 <FormControl sx={
                     {
@@ -190,8 +198,8 @@ export default function Summary() {
 
                     <Button variant="contained">Add Projection</Button>
                 </FormControl>
-                <div className="container mt-4">
-                <table className="table " {...getTableProps()} >
+                <div className="container mt-4 projectiontable">
+                <table className="table  " {...getTableProps()} >
                     <thead>
                     {// Loop over the header rows
                     headerGroups.map(headerGroup => (

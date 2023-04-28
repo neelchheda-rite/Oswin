@@ -1,12 +1,17 @@
 body{
     margin: 0;
     padding: 0;
+    overflow: scroll;
+    background-color: aqua;
 }
 .label{
     align-items: center;
     justify-content: center;
 }
-.buttonSummary{
-    display:flex;
-    align-items: end;
+
+
+ :thead{
+    position: sticky;
+    top: 0px;
+    margin: 0 0 0 0;
 }
