@@ -31,9 +31,7 @@ export default function Summary() {
                         value={customer}
                         label=" Customer"
                         onChange={handleChange}>
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
+                        
                         <MenuItem value={10}>Ten</MenuItem>
                         <MenuItem value={20}>Twenty</MenuItem>
                         <MenuItem value={30}>Thirty</MenuItem>
@@ -52,9 +50,7 @@ export default function Summary() {
                         value={customer}
                         label=" Item"
                         onChange={handleChange}>
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
+                        
                         <MenuItem value={10}>Ten</MenuItem>
                         <MenuItem value={20}>Twenty</MenuItem>
                         <MenuItem value={30}>Thirty</MenuItem>
@@ -73,9 +69,7 @@ export default function Summary() {
                         value={customer}
                         label=" Month"
                         onChange={handleChange}>
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
+                        
                         <MenuItem value={10}>January</MenuItem>
                         <MenuItem value={20}>February</MenuItem>
                         <MenuItem value={30}>March</MenuItem>
