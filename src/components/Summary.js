@@ -1,10 +1,11 @@
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import {TextField} from '@mui/material';
 import Button from '@mui/material/Button';
+import axios from 'axios';
 
 
 export default function Summary() {
@@ -15,6 +16,20 @@ export default function Summary() {
         setCustomer(event.target.value);
     };
 
+    const [products,setProducts]=useState([]);
+
+    const fetchData=async()=>{
+        
+        const response=await axios.get('https://fakestoreapi.com/products').catch(err=>console.log(err));
+        if(response){
+            const products=response.data;
+            console.log("Products : ",products);
+            setProducts(products);
+        }
+    };
+    useEffect(()=>{
+        fetchData();
+    },[]);
 
     return (
         <>
@@ -114,8 +129,8 @@ export default function Summary() {
                 </FormControl>
 
             </div>
-
-
+            
+                
         </>
     )
 }
