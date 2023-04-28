@@ -32,7 +32,7 @@ export default function Navbar(props) {
                 } bg-${
                     props.mode
                 }`
-            }>
+            } >
                 <div className="container-fluid">
                     <Link className="navbar-brand me-2 " to="/"
                         style={

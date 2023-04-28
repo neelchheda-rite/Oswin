@@ -1,17 +1,12 @@
 body{
     margin: 0;
     padding: 0;
+
+}
+
+
+.table-width{
+    height: 244px;
+    padding: 0 10px 10px 10px;
     overflow: scroll;
-    background-color: aqua;
-}
-.label{
-    align-items: center;
-    justify-content: center;
-}
-
-
- :thead{
-    position: sticky;
-    top: 0px;
-    margin: 0 0 0 0;
 }

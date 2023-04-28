@@ -1,38 +1,3 @@
-// import React, {Component} from 'react'
-// export default class Login extends Component {
-//     render() {
-//         return (
-//             <form>
-//                 <h3>Sign In</h3>
-//                 <div className="mb-3 ">
-//                     <label className='my-2'>Email address</label>
-//                     <input type="email" className="form-control" placeholder="Email address"/>
-//                 </div>
-//                 <div className="mb-3 my-2">
-//                     <label className='my-2'>Password</label>
-//                     <input type="password" className="form-control" placeholder="Password"/>
-//                 </div>
-//                 <div className="mb-3">
-//                     <div className="custom-control custom-checkbox">
-//                         <input type="checkbox" className="custom-control-input" id="customCheck1"/>
-//                         <label className="custom-control-label mx-2" htmlFor="customCheck1">
-//                             Remember me
-//                         </label>
-//                     </div>
-//                 </div>
-//                 <div className="d-grid">
-//                     <button type="submit" className="btn btn-primary">
-//                         Submit
-//                     </button>
-//                 </div>
-//                 <p className="forgot-password text-right my-2">
-//                     <a to="/"> Forgot password?</a>
-//                 </p>
-//             </form>
-//         )
-//     }
-// }
-
 import * as React from 'react';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -45,10 +10,10 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import "../Css/Login.css";
 import Typography from '@mui/material/Typography';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom';
+import "../Css/Login.css";
 
 
 function Copyright(props) {
@@ -91,7 +56,7 @@ export default function SignInSide() {
                     {height: '100vh'}
             }>
                 <CssBaseline/>
-                <Grid item
+                 <Grid item
                     xs={false}
                     sm={4}
                     md={7}
@@ -101,7 +66,8 @@ export default function SignInSide() {
                             backgroundRepeat: 'no-repeat',
                             backgroundColor: (t) => t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                             backgroundSize: 'cover',
-                            backgroundPosition: 'center'
+                            backgroundPosition: 'center',
+                           
                         }
                     }/>
                 <Grid item

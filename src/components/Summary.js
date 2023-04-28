@@ -6,6 +6,9 @@ import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import { useTable} from 'react-table';
+import "../Css/Summary.css";
+import { usePagination, useGroupBy, useExpanded } from 'react-table'
+
 
 
 export default function Summary() {
@@ -63,22 +66,15 @@ const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filte
     }
 }) : [], [products])
 
-
-
-
-
-
-
-
-
-
-    const tableInstance = useTable({columns:productColumn, data: productData});
+    const tableInstance = useTable({columns:productColumn, data: productData}, useGroupBy,
+        useExpanded,usePagination);
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
+        state: { groupBy, expanded },
       } = tableInstance
 
     useEffect(() => {
@@ -86,7 +82,7 @@ const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filte
     }, []);
     return (
         <>
-            <div className='container mt-3'>
+            <div className='container mt-3 ' style={{maxHeight:"300rem",overflow:'auto'}}>
                 <FormControl required
                     sx={
                         {
@@ -199,7 +195,7 @@ const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filte
                     <Button variant="contained">Add Projection</Button>
                 </FormControl>
                 <div className="container mt-4 projectiontable">
-                <table className="table  " {...getTableProps()} >
+                <table className="table "  {...getTableProps()} >
                     <thead>
                     {// Loop over the header rows
                     headerGroups.map(headerGroup => (

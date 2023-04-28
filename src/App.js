@@ -9,6 +9,7 @@ import SideBar from './components/User/SideBar';
 import { SideBarData } from './components/Data/SideBarData';
 import React from 'react';
 import Summary from './components/Summary';
+import Testing from './components/Testing';
 import { ToastContainer } from 'react-toastify';
 
 
@@ -26,12 +27,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<><Navbar mode={mode} /><Login /></>} />
+          <Route exact path="/" element={<div className='login' ><Navbar mode={mode} /><Login /></div>} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/user" element={<><UserNavbar mode={mode} /><SideBar mode={mode} /></>}>
             <Route>{UserRoutes}</Route>
           </Route>
-            <Route exact path='/test/summary' element={<><UserNavbar mode={mode} /><Summary /></>} />+
+            <Route exact path='/test/summary' element={<><UserNavbar mode={mode} /><Summary /></>} />
+            <Route exact path='/testing' element={<><Testing /></>} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
         <ToastContainer  autoClose={2000}/>
