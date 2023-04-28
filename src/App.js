@@ -27,9 +27,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<div className='login' ><Navbar mode={mode} /><Login /></div>} />
+          <Route exact path="/" element={<div className='singlePage' ><Navbar mode={mode} /><Login /></div>} />
           <Route exact path="/about" element={<About />} />
-          <Route exact path="/user" element={<><UserNavbar mode={mode} /><SideBar mode={mode} /></>}>
+          <Route exact path="/user" element={<div className='singlePage'><UserNavbar mode={mode} /><SideBar mode={mode} /></div>}>
             <Route>{UserRoutes}</Route>
           </Route>
             <Route exact path='/test/summary' element={<><UserNavbar mode={mode} /><Summary /></>} />

@@ -6,7 +6,6 @@ body{
 
 
 .table-width{
-    height: 244px;
-    padding: 0 10px 10px 10px;
+  
     overflow: scroll;
 }

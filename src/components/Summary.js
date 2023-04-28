@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import { useTable} from 'react-table';
 import "../Css/Summary.css";
-import { usePagination, useGroupBy, useExpanded } from 'react-table'
+// import { usePagination, useGroupBy, useExpanded } from 'react-table'
 
 
 
@@ -66,17 +66,17 @@ const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filte
     }
 }) : [], [products])
 
-    const tableInstance = useTable({columns:productColumn, data: productData}, useGroupBy,
-        useExpanded,usePagination);
+    const tableInstance = useTable({columns:productColumn, data: productData});
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
-        state: { groupBy, expanded },
+        
       } = tableInstance
 
+    const isEven=(idx)=>idx%2===0;
     useEffect(() => {
         fetchData();
     }, []);
@@ -215,12 +215,12 @@ const productColumn = useMemo(() => products[0] ? Object.keys(products[0]).filte
                     {/* Apply the table body props */}
                     <tbody {...getTableBodyProps()}>
                     {// Loop over the table rows
-                    rows.map(row => {
+                    rows.map((row,idx) => {
                         // Prepare the row for display
                         prepareRow(row)
                         return (
                         // Apply the row props
-                        <tr {...row.getRowProps()}>
+                        <tr  className={isEven(idx)?'bg-secondary bg-opacity-25':''} {...row.getRowProps()}>
                             {// Loop over the rows cells
                             row.cells.map(cell => {
                             // Apply the cell props
