@@ -50,6 +50,7 @@ import Typography from '@mui/material/Typography';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom';
 
+
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -65,10 +66,13 @@ export default function SignInSide() {
     const navigate = useNavigate();
 
     const navigateToContacts = () => {
-        toast.success('Success Notification !', {position: toast.POSITION.TOP_RIGHT});
+      toast.success('Log in Successful', {position: toast.POSITION.TOP_RIGHT});
+       setTimeout(() => {
         navigate('/user');
+      }, "500");
     };
 
+  
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -139,6 +143,7 @@ export default function SignInSide() {
                                 onClick={navigateToContacts}>
                                 Sign In
                             </Button>
+                           
                             <ToastContainer/>
                             <Grid container>
 
