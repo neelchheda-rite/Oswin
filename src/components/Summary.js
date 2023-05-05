@@ -167,14 +167,12 @@ export default function Summary() {
     tableHooks
   );
   const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
+   
     rows,
-    prepareRow,
+    
   } = tableInstance;
 
-  const isEven = (idx) => idx % 2 === 0;
+  // const isEven = (idx) => idx % 2 === 0;
   useEffect(() => {
     fetchData();
   }, []);

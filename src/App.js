@@ -16,7 +16,7 @@ import Dispatch from "./components/Merge/Dispatch";
 import Test1 from "./components/Merge/Test1";
 
 function App() {
-  const mode = "light";
+  const mode = "dark";
 
   const UserRoutes = SideBarData.map((val) => {
     const Component = val.title;
