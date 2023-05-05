@@ -16,7 +16,7 @@ import Dispatch from "./components/Merge/Dispatch";
 import Test1 from "./components/Merge/Test1";
 
 function App() {
-  const mode = "dark";
+  const mode = "light";
 
   const UserRoutes = SideBarData.map((val) => {
     const Component = val.title;
@@ -91,18 +91,7 @@ function App() {
           >
             <Route>{UserRoutes}</Route>
           </Route>
-          <Route
-            exact
-            path="/Test"
-            element={
-              <>
-                <UserNavbar mode={mode} />
-                <SideBar mode={mode} />
-                <Test1 />
-              </>
-            }
-          />
-          <Route
+          {/* <Route
             exact
             path="/test/summary"
             element={
@@ -111,7 +100,7 @@ function App() {
                 <Summary />
               </>
             }
-          />
+          /> */}
 
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>

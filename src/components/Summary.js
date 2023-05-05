@@ -296,10 +296,6 @@ export default function Summary() {
               <FormControl
                 sx={{
                   mt: 5,
-                  mr: 2,
-                  mb: 2,
-                  ml: 2,
-
                   minWidth: 170,
                 }}
               >
@@ -425,7 +421,7 @@ export default function Summary() {
                       <div className="container">
                         <table className="table">
                           <tbody>
-                            <div style={{ height: 300, width: "100%" }}>
+                            {/* <div style={{ height: 300, width: "100%" }}> */}
                               <DataGrid
                                 sx={{
                                   ".MuiTablePagination-displayedRows , .MuiTablePagination-selectLabel": {
@@ -446,7 +442,7 @@ export default function Summary() {
                                 rows={rows1}
                                 columns={columns}
                               />
-                            </div>
+                            
                           </tbody>
                         </table>
                         <div className="modal-footer">
