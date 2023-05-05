@@ -35,11 +35,13 @@ export default function Summary() {
     setItem(event.target.value);
   };
   const handleMonthChange = (event) => {
-    setMonth(event.target.value);
+    setMonth(event.value);
   };
   const handleYearChange = (event) => {
-    setYear(event.target.value);
+    setYear(event.value);
   };
+
+  
 
   const [products, setProducts] = useState([]);
 
@@ -57,13 +59,13 @@ export default function Summary() {
   const createRandomRow = () => {
     return {
       id: nanoid(),
-      CustomerName: "",
-      ItemDescription: "",
-      ItemCode: "",
-      Month: "",
-      DispachBalance: "",
-      AdditionalQuantity: "",
-      TotalQuantity: "",
+      CustomerName: "Rite",
+      ItemDescription: "Technologies",
+      ItemCode: "Y-0120",
+      Month: "May",
+      DispachBalance: "50000",
+      AdditionalQuantity: "120000",
+      TotalQuantity: "1500000",
     };
   };
 
@@ -363,7 +365,7 @@ export default function Summary() {
                               Month
                               <Select
                                 labelId="demo-simple-select-required-label"
-                                id="demo-simple-select-required"
+                                id="datepicker"
                                 value={month}
                                 label="MonthCalendar"
                                 onChange={handleMonthChange}
@@ -399,7 +401,7 @@ export default function Summary() {
                           sx={{
                             m: 2,
                             my: 5,
-                            minWidth: 170,
+                            minWidth: 150,
                           }}
                         >
                           <Button variant="contained">Search</Button>
@@ -408,7 +410,7 @@ export default function Summary() {
                           sx={{
                             mx: 2,
                             my: 5,
-                            minWidth: 170,
+                            minWidth: 150,
                           }}
                         >
                           <Button variant="contained" onClick={handleAddRow}>
@@ -468,7 +470,7 @@ export default function Summary() {
                       },
                     }}
                     columns={columns}
-                    rows={rows}
+                    rows={rows1}
                     rowThreshold={0}
                     disableColumnMenu
                     disableColumnResize

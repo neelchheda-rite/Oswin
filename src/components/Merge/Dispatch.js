@@ -1,7 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
-
+import "../../Css/Dispatch.css";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { DataGridPro } from "@mui/x-data-grid-pro";
@@ -20,7 +20,7 @@ import FormControl from "@mui/material/FormControl";
 
 function Dispatch({ row: rowProp }) {
   return (
-    <div className="container">
+    <div className="container1">
       <Stack
         sx={{ py: 2, height: "100%", boxSizing: "border-box" }}
         direction="column"
@@ -45,7 +45,7 @@ function Dispatch({ row: rowProp }) {
                   type: "date",
                   align: "center",
                   width: 150,
-                  
+
                   editable: true,
                 },
                 {
@@ -67,7 +67,7 @@ function Dispatch({ row: rowProp }) {
                   headerName: "Quantity",
                   type: "number",
                   width: 110,
-                 
+
                   editable: true,
                 },
                 {
@@ -137,7 +137,7 @@ export default function BasicDetailPanels() {
   const getDetailPanelHeight = React.useCallback(() => 500, []);
 
   return (
-    <div className="container">
+    <div className="container1">
       <Box sx={{ width: "100%", height: 500 }}>
         <DataGridPro
           columns={columns}
