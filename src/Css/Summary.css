@@ -1,11 +1,31 @@
 body{
     margin: 0;
     padding: 0;
-
+    
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 
 .table-width{
   
     overflow: scroll;
+}
+
+.containermain{
+ display:flex;
+}
+
+
+
+.table{
+    padding-right:15px;
+    width:90%;
+}
+.containermain{
+    padding-left: 15px;
+}
+.p {
+    margin-top: 0;
 }

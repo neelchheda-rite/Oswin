@@ -60,6 +60,12 @@ export default function Navbar(props) {
                                     props.projections
                                 } </Link>
                             </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link" aria-current="page" to="/user/dispatch">
+                                    {
+                                    props.dispatch
+                                } </Link>
+                            </li>
                         </ul>
                         <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -151,12 +157,14 @@ Navbar.propTypes = {
     title: PropTypes.string,
    
     report: PropTypes.string,
-    projections: PropTypes.string
+    projections: PropTypes.string,
+    dispatch:PropTypes.string
 }
 
 Navbar.defaultProps = {
     title: "Oswin",
     
-    report: "Report",
-    projections: "Projections"
+    report: "Reports",
+    projections: "Projections",
+    dispatch:"Dispatch"
 }
