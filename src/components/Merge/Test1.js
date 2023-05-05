@@ -48,7 +48,7 @@ useEffect(() => {
          }else {
           setRowHeight(28);
          }
-      }, [rows1]);
+      }, []); 
  
   
  const columns = [

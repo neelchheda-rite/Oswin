@@ -45,7 +45,7 @@ function Dispatch({ row: rowProp }) {
                   type: "date",
                   align: "center",
                   width: 150,
-                  align:"left",
+                  
                   editable: true,
                 },
                 {
