@@ -4,15 +4,13 @@ import React, { useEffect, useMemo, useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import { DateField } from "@mui/x-date-pickers/DateField";
+
 import InputLabel from "@mui/material/InputLabel";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import "../Css/Summary.css";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
-import { YearCalendar } from "@mui/x-date-pickers/YearCalendar";
-import { MonthCalendar } from "@mui/x-date-pickers/MonthCalendar";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
@@ -220,8 +218,8 @@ export default function Summary() {
                 <Select
                   labelId="demo-simple-select-required-label"
                   id="demo-simple-select-required"
-                  value={customer}
-                  label=" Item"
+                  value={item}
+                  label="Item"
                   onChange={handleItemChange}
                 >
                   <MenuItem value={10}>Ten</MenuItem>

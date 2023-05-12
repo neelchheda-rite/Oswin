@@ -91,16 +91,7 @@ function App() {
           >
             <Route>{UserRoutes}</Route>
           </Route>
-          {/* <Route
-            exact
-            path="/test/summary"
-            element={
-              <>
-                <UserNavbar mode={mode} />
-                <Summary />
-              </>
-            }
-          /> */}
+         
           <Route exact
             path="/home"
             element={
