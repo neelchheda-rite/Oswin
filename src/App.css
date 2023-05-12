@@ -1,11 +1,13 @@
 body::-webkit-scrollbar{
   display: none;
+  overflow-y: hidden;
 }
 body{
  
   margin: 0;
   padding: 0;
   height: 100vh;
+  overflow-y: hidden;
 }
 .singlePage{
   overflow: hidden;

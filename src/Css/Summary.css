@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+
     
 }
 body::-webkit-scrollbar {
@@ -15,6 +16,19 @@ body::-webkit-scrollbar {
 .containermain{
 
  padding-left: 10rem;
+ max-height: 100%;
+ overflow-y: hidden;
+
+ 
+}
+.modal-dialog {
+   
+    max-height: 96%;
+}
+.modal-body {
+    max-height: 100vh;
+     overflow-y: none;
+     
 }
 
 .table{

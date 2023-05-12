@@ -101,7 +101,14 @@ function App() {
               </>
             }
           /> */}
-
+          <Route exact
+            path="/home"
+            element={
+              <div className="singlePage">
+                <UserNavbar mode={mode} />
+                <SideBar mode={mode} />
+              </div>
+            } />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
         <ToastContainer pauseOnHover="false" autoClose={1500} />

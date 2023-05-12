@@ -4,7 +4,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import { useTable } from "react-table";
+import { DateField } from "@mui/x-date-pickers/DateField";
+import InputLabel from "@mui/material/InputLabel";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import "../Css/Summary.css";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -16,8 +18,6 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { nanoid } from "nanoid";
 
-
-
 // import { usePagination, useGroupBy, useExpanded } from 'react-table'
 
 export default function Summary() {
@@ -25,7 +25,7 @@ export default function Summary() {
   const [item, setItem] = React.useState("");
   const [month, setMonth] = React.useState("");
   const [year, setYear] = React.useState("");
-   const [value, setValue] = React.useState(null);
+
   const drawerWidth = 40;
 
   const handleCustomerChange = (event) => {
@@ -40,8 +40,6 @@ export default function Summary() {
   const handleYearChange = (event) => {
     setYear(event.value);
   };
-
-  
 
   const [products, setProducts] = useState([]);
 
@@ -80,48 +78,49 @@ export default function Summary() {
   const columns = [
     {
       field: "CustomerName",
-      headerName: "Customer Name",
+      headerName: <strong>Customer Name</strong>,
       width: 150,
+
       editable: true,
     },
     {
       field: "ItemDescription",
-      headerName: "Item Description",
+      headerName: <strong>Item Description</strong>,
       width: 150,
       type: "text",
       editable: true,
     },
     {
       field: "ItemCode",
-      headerName: "Item Code",
+      headerName: <strong>Item Code</strong>,
       type: "text",
       width: 150,
       editable: true,
     },
     {
       field: "Month",
-      headerName: "Month",
+      headerName: <strong>Month</strong>,
       type: "text",
       width: 120,
       editable: true,
     },
     {
       field: "DispachBalance",
-      headerName: "Dispatch Balance",
+      headerName: <strong>Dispatch Balance</strong>,
       type: "number",
       width: 150,
       editable: true,
     },
     {
       field: "AdditionalQuantity",
-      headerName: "Additional Quantity",
+      headerName: <strong>Additional Quantity</strong>,
       type: "number",
       width: 150,
       editable: true,
     },
     {
       field: "TotalQuantity",
-      headerName: "Total Quantity",
+      headerName: <strong>Total Quantity</strong>,
       type: "number",
       width: 150,
       editable: true,
@@ -130,8 +129,6 @@ export default function Summary() {
   const handleAddRow = () => {
     setRows((prevRows) => [...prevRows, createRandomRow()]);
   };
-
-  const productData = useMemo(() => [...products], [products]);
 
   const productColumn = useMemo(
     () =>
@@ -164,15 +161,6 @@ export default function Summary() {
       ...columns,
     ]);
   };
-  const tableInstance = useTable(
-    { columns: productColumn, data: productData },
-    tableHooks
-  );
-  const {
-   
-    rows,
-    
-  } = tableInstance;
 
   // const isEven = (idx) => idx % 2 === 0;
   useEffect(() => {
@@ -199,10 +187,12 @@ export default function Summary() {
                 sx={{
                   mx: 2,
                   my: 1,
-                  minWidth: 170,
+                  minWidth: 150,
                 }}
               >
-                Customer
+                <InputLabel id="demo-simple-select-required-label">
+                  Customer
+                </InputLabel>
                 <Select
                   labelId="demo-simple-select-required-label"
                   id="demo-simple-select-required"
@@ -221,14 +211,16 @@ export default function Summary() {
                 sx={{
                   mx: 2,
                   my: 1,
-                  minWidth: 170,
+                  minWidth: 150,
                 }}
               >
-                Item
+                <InputLabel id="demo-simple-select-required-label">
+                  Item
+                </InputLabel>
                 <Select
                   labelId="demo-simple-select-required-label"
                   id="demo-simple-select-required"
-                  value={item}
+                  value={customer}
                   label=" Item"
                   onChange={handleItemChange}
                 >
@@ -242,49 +234,41 @@ export default function Summary() {
                 required
                 sx={{
                   mx: 2,
-
                   minWidth: 170,
                 }}
               >
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DemoContainer components={["MonthCalendar"]}>
-                    Month
-                    <Select
-                      labelId="demo-simple-select-required-label"
-                      id="demo-simple-select-required"
-                      value={month}
-                      label="MonthCalendar"
+                  <DemoContainer components={["DatePicker"]}>
+                    <DatePicker
+                      format="MMMM"
+                      views={["month"]}
+                      label={"Month"}
+                      openTo="month"
                       onChange={handleMonthChange}
-                    >
-                      <MonthCalendar />
-                    </Select>
+                    />
                   </DemoContainer>
                 </LocalizationProvider>
               </FormControl>
               <FormControl
                 sx={{
                   mx: 2,
-                  minWidth: 170,
+                  minWidth: 150,
                 }}
               >
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DemoContainer components={["YearCalendar"]}>
-                    Year
-                    <Select
-                      labelId="demo-simple-select-required-label"
-                      id="demo-simple-select-required"
-                      value={year}
-                      label=" YearCalendar"
+                  <DemoContainer components={["DatePicker"]}>
+                    <DatePicker
+                      views={["year"]}
+                      label={"Year"}
+                      openTo="year"
                       onChange={handleYearChange}
-                    >
-                      <YearCalendar />
-                    </Select>
+                    />
                   </DemoContainer>
                 </LocalizationProvider>
               </FormControl>
               <FormControl
                 sx={{
-                  mt: 5,
+                  mt: 3,
                   mr: 2,
                   mb: 2,
                   ml: 2,
@@ -295,7 +279,7 @@ export default function Summary() {
               </FormControl>
               <FormControl
                 sx={{
-                  mt: 5,
+                  mt: 3,
                   minWidth: 170,
                 }}
               >
@@ -333,12 +317,15 @@ export default function Summary() {
                         <FormControl
                           required
                           sx={{
-                            mx: 2,
-                            my: 1,
-                            minWidth: 170,
+                            mx: 1,
+                            my:1,
+
+                            minWidth: 150,
                           }}
                         >
-                          Customer
+                          <InputLabel id="demo-simple-select-required-label">
+                            Customer
+                          </InputLabel>
                           <Select
                             labelId="demo-simple-select-required-label"
                             id="demo-simple-select-required"
@@ -355,44 +342,38 @@ export default function Summary() {
                         <FormControl
                           required
                           sx={{
-                            mx: 2,
+                            mx: 1,
 
                             minWidth: 170,
                           }}
                         >
                           <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DemoContainer components={["MonthCalendar"]}>
-                              Month
-                              <Select
-                                labelId="demo-simple-select-required-label"
-                                id="datepicker"
-                                value={month}
-                                label="MonthCalendar"
+                            <DemoContainer components={["DatePicker"]}>
+                              <DatePicker
+                                size="sm"
+                                format="MMMM"
+                                views={["month"]}
+                                label={"Month"}
+                                openTo="month"
                                 onChange={handleMonthChange}
-                              >
-                                <MonthCalendar />
-                              </Select>
+                              />
                             </DemoContainer>
                           </LocalizationProvider>
                         </FormControl>
                         <FormControl
                           sx={{
-                            mx: 2,
+                            mx: 1,
                             minWidth: 170,
                           }}
                         >
                           <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DemoContainer components={["YearCalendar"]}>
-                              Year
-                              <Select
-                                labelId="demo-simple-select-required-label"
-                                id="demo-simple-select-required"
-                                value={year}
-                                label=" YearCalendar"
+                            <DemoContainer components={["DatePicker"]}>
+                              <DatePicker
+                                views={["year"]}
+                                label={"Year"}
+                                openTo="year"
                                 onChange={handleYearChange}
-                              >
-                                <YearCalendar value={value} onChange={(newValue) => setValue(newValue)}/>
-                              </Select>
+                              />
                             </DemoContainer>
                           </LocalizationProvider>
                         </FormControl>
@@ -400,7 +381,7 @@ export default function Summary() {
                         <FormControl
                           sx={{
                             m: 2,
-                            my: 5,
+                            my: 3,
                             minWidth: 150,
                           }}
                         >
@@ -409,7 +390,7 @@ export default function Summary() {
                         <FormControl
                           sx={{
                             mx: 2,
-                            my: 5,
+                            my: 3,
                             minWidth: 150,
                           }}
                         >
@@ -422,27 +403,26 @@ export default function Summary() {
                         <table className="table">
                           <tbody>
                             {/* <div style={{ height: 300, width: "100%" }}> */}
-                              <DataGrid
-                                sx={{
-                                  ".MuiTablePagination-displayedRows , .MuiTablePagination-selectLabel": {
-                                    "margin-top": "1em",
-                                    "margin-bottom": "1em",
+                            <DataGrid
+                              sx={{
+                                ".MuiTablePagination-displayedRows , .MuiTablePagination-selectLabel": {
+                                  "margin-top": "1em",
+                                  "margin-bottom": "1em",
+                                },
+                              }}
+                              initialState={{
+                                pagination: {
+                                  paginationModel: {
+                                    pageSize: 5,
                                   },
-                                }}
-                                initialState={{
-                                  pagination: {
-                                    paginationModel: {
-                                      pageSize: 25,
-                                    },
-                                  },
-                                }}
-                                checkboxSelection
-                                disableRowSelectionOnClick
-                                disableColumnMenu
-                                rows={rows1}
-                                columns={columns}
-                              />
-                            
+                                },
+                              }}
+                              checkboxSelection
+                              disableRowSelectionOnClick
+                              disableColumnMenu
+                              rows={rows1}
+                              columns={columns}
+                            />
                           </tbody>
                         </table>
                         <div className="modal-footer">

@@ -32,39 +32,42 @@ function Dispatch({ row: rowProp }) {
               disableColumnMenu
               disableColumnResize
               disableColumnSelector
+             
+             
               columns={[
                 {
+                  headerName:(<strong>Transporter</strong>),
                   field: "Transporter",
-                  headerName: "Transporter",
                   width: 200,
                   editable: true,
                 },
                 {
                   field: "Date",
-                  headerName: "Date",
+                  headerName: (<strong>Date</strong>),
                   type: "date",
-                  align: "center",
+                  align: "left",
                   width: 150,
-
                   editable: true,
                 },
                 {
                   field: "InvoiceNumber",
-                  headerName: "Invoice Number ",
+                  headerName:(<strong>Invoice Number</strong>),
                   width: 150,
                   editable: true,
                 },
 
                 {
                   field: "LoadingReciept",
-                  headerName: "Loading Reciept",
+                  headerName: (<strong>Loading Reciept</strong>),
                   type: "text",
+                  align: "center",
                   width: 130,
                   editable: true,
                 },
                 {
                   field: "Quantity",
-                  headerName: "Quantity",
+                  headerName:(<strong>Quantity</strong>),
+                  align:"center",
                   type: "number",
                   width: 110,
 
@@ -72,7 +75,7 @@ function Dispatch({ row: rowProp }) {
                 },
                 {
                   field: "GRN",
-                  headerName: " GRN ",
+                  headerName: (<strong>GRN</strong>),
                   type: "text",
                   editable: true,
                 },
@@ -93,13 +96,14 @@ Dispatch.propTypes = {
 };
 
 const columns = [
-  { field: "customer", headerName: "Customer Name", width: 200 },
-  { field: "ItemDesc", headerName: "Item Description", width: 200 },
-  { field: "ItemCode", headerName: " Item Code", width: 200 },
-  { field: "Month", headerName: "Month" },
-  { field: "DispatchBal", headerName: "Dispatch Balance", width: 200 },
-  { field: "AddQuant", headerName: "Additional Quantity", width: 200 },
-  { field: "TotalQuant", headerName: "Total Quantity", width: 200 },
+ 
+  { field: "customer", headerName: (<strong>Customer Name</strong>), width: 200 },
+  { field: "ItemDesc", headerName: (<strong>Item Description</strong>), width: 200 },
+  { field: "ItemCode", headerName: (<strong>Item Code</strong>), width: 200 },
+  { field: "Month", headerName: (<strong>Month</strong>) },
+  { field: "DispatchBal", headerName:(<strong>Dispatch Balance</strong>), width: 200 },
+  { field: "AddQuant", headerName: (<strong>Additional Quantity</strong>), width: 200 },
+  { field: "TotalQuant", headerName: (<strong>Total Quantity</strong>), width: 200 },
 ];
 
 function generateProducts() {
@@ -149,6 +153,8 @@ export default function BasicDetailPanels() {
           getDetailPanelHeight={getDetailPanelHeight}
           getDetailPanelContent={getDetailPanelContent}
         />
+      </Box>
+      <div className="modal-footer">
         <FormControl
           sx={{
             m: 3,
@@ -157,7 +163,7 @@ export default function BasicDetailPanels() {
         >
           <Button variant="contained">Add Dispatch</Button>
         </FormControl>
-      </Box>
+      </div>
     </div>
   );
 }
