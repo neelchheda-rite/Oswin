@@ -25,14 +25,16 @@ function Copyright(props) {
         </Typography>
     );
 }
-
-
 const defaultTheme = createTheme();
 
+
 export default function SignInSide() {
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     let navigate = useNavigate();
+
     const handleLoginSubmit = (event) => {
         event.preventDefault();
         if (!email || !password) {
@@ -48,15 +50,16 @@ export default function SignInSide() {
             email: email,
             password: password
         }).then((response) => {
-            window.sessionStorage.setItem('Name', response.data.data.Name);
-            console.log(response);
-            toast.success('Log in Successful!', {
-                position: toast.POSITION.TOP_RIGHT,
-                toastId: 'log_in_success'
-            });
-            navigate('/user');
+            if (response.status === 200) {
+                window.sessionStorage.setItem('Name', response.data.data.Name);
+                console.log(response.status);
+                toast.success('Log in Successful!', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    toastId: 'log_in_success'
+                });
+                navigate('/user');
 
-            if (response.data.status === 200) {}
+            }
         });
     };
 
