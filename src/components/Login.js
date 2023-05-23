@@ -107,7 +107,7 @@ export default function SignInSide() {
                             <LockOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h5">
-                            Sign in
+                            Login
                         </Typography>
                         <Box component="form" noValidate
                             onSubmit={handleLoginSubmit}
@@ -140,7 +140,7 @@ export default function SignInSide() {
                                         mb: 2
                                     }
                             }>
-                                Sign In
+                                Login
                             </Button>
                             <ToastContainer position="top-right" pauseOnHover="false"
                                 autoClose={1500}/>

@@ -3,7 +3,6 @@ import About from "./components/About";
 // import CreateUser from './components/CreateUser';
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SideBar from "./components/User/SideBar";
 import { SideBarData } from "./components/Data/SideBarData";
