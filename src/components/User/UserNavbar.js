@@ -23,7 +23,7 @@ export default function Navbar(props) {
       setAnchorEl(null);
     };
     return (
-        <div>
+        <dive>
             <nav className={
                 `navbar navbar-expand-lg navbar-${
                     props.mode
@@ -143,7 +143,7 @@ export default function Navbar(props) {
                     </div>
                 </div>
             </nav>
-        </div>
+        </dive>
     )
 }
 

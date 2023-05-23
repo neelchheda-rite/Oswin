@@ -2,8 +2,8 @@ import "./App.css";
 import About from "./components/About";
 // import CreateUser from './components/CreateUser';
 import Login from "./components/Login";
-// import Navbar from "./components/Navbar";
-import UserNavbar from "./components/User/UserNavbar";
+import Navbar from "./components/Navbar";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SideBar from "./components/User/SideBar";
 import { SideBarData } from "./components/Data/SideBarData";
@@ -49,7 +49,7 @@ function App() {
             path="/user/report"
             element={
               <>
-                <UserNavbar mode={mode} />
+                <Navbar mode={mode} />
                 <Reports />
               </>
             }
@@ -59,7 +59,7 @@ function App() {
             path="/user/projections"
             element={
               <>
-                <UserNavbar mode={mode} />
+                <Navbar mode={mode} />
                 <SideBar mode={mode} />
                 <div>
                   <Summary />
@@ -72,7 +72,7 @@ function App() {
             path="/user/dispatch"
             element={
               <>
-                <UserNavbar mode={mode} />
+                <Navbar mode={mode} />
                 <SideBar mode={mode} />
                 <Dispatch />
               </>
@@ -83,7 +83,7 @@ function App() {
             path="/user"
             element={
               <div className="singlePage">
-                <UserNavbar mode={mode} />
+                <Navbar mode={mode} />
                 <SideBar mode={mode} />
               </div>
             }
@@ -95,7 +95,7 @@ function App() {
             path="/home"
             element={
               <div className="singlePage">
-                <UserNavbar mode={mode} />
+                <Navbar mode={mode} />
                 <SideBar mode={mode} />
               </div>
             } />
