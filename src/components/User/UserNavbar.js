@@ -32,7 +32,7 @@ export default function Navbar(props) {
                 }`
             } >
                 <div className="container-fluid">
-                    <Link className="navbar-brand me-2 " to="/"
+                    <Link className="navbar-brand me-2  " to="/"
                      // style={{color: '#3299bc'}}>
                         style={
                             {color: '#1976d2'}
@@ -78,7 +78,7 @@ export default function Navbar(props) {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>{window.sessionStorage.getItem("Name").slice(0,1).toUpperCase()}</Avatar>
+            <Avatar sx={{ width: 32, height: 32,bgcolor: 'primary.main' }}>{window.sessionStorage.getItem("Name").slice(0,1).toUpperCase()}</Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -118,7 +118,12 @@ export default function Navbar(props) {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> {window.sessionStorage.getItem("Name").charAt(0).toUpperCase() + window.sessionStorage.getItem("Name").slice(1)}
+        <Avatar sx={
+                            {
+                               
+                                bgcolor: 'primary.main'
+                            }
+                        } /> {window.sessionStorage.getItem("Name").charAt(0).toUpperCase() + window.sessionStorage.getItem("Name").slice(1)}
         </MenuItem>      
         <Divider />
         <MenuItem onClick={handleClose}>
