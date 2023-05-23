@@ -27,10 +27,8 @@ export default function Navbar(props) {
             <nav className={
                 `navbar navbar-expand-lg navbar-${
                     props.mode
-                } bg-${
-                    props.mode
-                }`
-            } >
+                } ` 
+            } style={{backgroundColor:"#002244"}}>
                 <div className="container-fluid">
                     <Link className="navbar-brand me-2  " to="/"
                      // style={{color: '#3299bc'}}>
