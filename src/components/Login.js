@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {ToastContainer, toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -10,11 +9,14 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {useState} from 'react';
+import Axios from 'axios';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from 'react-router-dom';
-import "../Css/Login.css";
-
 
 function Copyright(props) {
     return (
@@ -24,39 +26,48 @@ function Copyright(props) {
     );
 }
 
-const theme = createTheme();
+
+const defaultTheme = createTheme();
 
 export default function SignInSide() {
-
-    const navigate = useNavigate();
-
-    const navigateTo = () => {
-      if (!toast.isActive('log_in_success')) {
-        toast.success('Log in Successful!', {
-          position: toast.POSITION.TOP_RIGHT,
-          toastId: 'log_in_success',
-        });
-      }
-      navigate('/user');
-        
-    };
-
-
-    const handleSubmit = (event) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    let navigate = useNavigate();
+    const handleLoginSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({email: data.get('email'), password: data.get('password')});
-    };
+        if (!email || !password) {
+            toast.error('Invalid Email or Password', {
+                position: toast.POSITION.TOP_RIGHT,
+                toastId: 'log_in_error'
+            });
+        }
+        // const data = new FormData(event.currentTarget);
+        // setEmail(data.get('email'));
+        // setPassword(data.get('password'));
+        Axios.post("http://restapi.adequateshop.com/api/authaccount/login", {
+            email: email,
+            password: password
+        }).then((response) => {
+            window.sessionStorage.setItem('Name', response.data.data.Name);
+            console.log(response);
+            toast.success('Log in Successful!', {
+                position: toast.POSITION.TOP_RIGHT,
+                toastId: 'log_in_success'
+            });
+            navigate('/user');
 
+            if (response.data.status === 200) {}
+        });
+    };
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={defaultTheme}>
             <Grid container component="main"
                 sx={
                     {height: '100vh'}
             }>
                 <CssBaseline/>
-                 <Grid item
+                <Grid item
                     xs={false}
                     sm={4}
                     md={7}
@@ -66,8 +77,7 @@ export default function SignInSide() {
                             backgroundRepeat: 'no-repeat',
                             backgroundColor: (t) => t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                             backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                           
+                            backgroundPosition: 'center'
                         }
                     }/>
                 <Grid item
@@ -86,39 +96,53 @@ export default function SignInSide() {
                             alignItems: 'center'
                         }
                     }>
-
+                        <Avatar sx={
+                            {
+                                m: 1,
+                                bgcolor: 'secondary.main'
+                            }
+                        }>
+                            <LockOutlinedIcon/>
+                        </Avatar>
                         <Typography component="h1" variant="h5">
                             Sign in
                         </Typography>
                         <Box component="form" noValidate
-                            onSubmit={handleSubmit}
+                            onSubmit={handleLoginSubmit}
                             sx={
                                 {mt: 1}
                         }>
-                            <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus/>
-                            <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password"/>
+                            <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email"
+                                value={email}
+                                autoFocus
+                                onChange=
+                                {(e) => {setEmail(e.target.value);
+                                                                                                                                             }}/>
+                            <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password"
+                                value={password}
+                                onChange={
+                                    (e) => {
+                                        setPassword(e.target.value);
+                                    }
+                                }/>
                             <FormControlLabel control={
                                     <Checkbox
                                 value="remember"
                                 color="primary"/>
                                 }
-                                label="Remember me "/>
+                                label="Remember me"/>
                             <Button type="submit" fullWidth variant="contained"
                                 sx={
                                     {
                                         mt: 3,
                                         mb: 2
                                     }
-                                }
-                                onClick={navigateTo}>
+                            }>
                                 Sign In
                             </Button>
-
-                            <ToastContainer position="top-right"
-                                
-                                />
+                            <ToastContainer position="top-right" pauseOnHover="false"
+                                autoClose={1500}/>
                             <Grid container>
-
                                 <Grid item xs>
                                     <Link to="/" variant="body2">
                                         Forgot password?

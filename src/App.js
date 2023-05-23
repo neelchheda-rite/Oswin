@@ -2,14 +2,13 @@ import "./App.css";
 import About from "./components/About";
 // import CreateUser from './components/CreateUser';
 import Login from "./components/Login";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import UserNavbar from "./components/User/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SideBar from "./components/User/SideBar";
 import { SideBarData } from "./components/Data/SideBarData";
 import React from "react";
 import Summary from "./components/Summary";
-
 import { ToastContainer } from "react-toastify";
 import Reports from "./components/Merge/Reports";
 import Dispatch from "./components/Merge/Dispatch";
@@ -39,7 +38,7 @@ function App() {
             path="/"
             element={
               <div className="singlePage">
-                <Navbar mode={mode} />
+                
                 <Login />
               </div>
             }
