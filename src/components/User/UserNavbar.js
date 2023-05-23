@@ -9,7 +9,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
@@ -79,7 +78,7 @@ export default function Navbar(props) {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+            <Avatar sx={{ width: 32, height: 32 }}>{window.sessionStorage.getItem("Name").slice(0,1).toUpperCase()}</Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -119,18 +118,9 @@ export default function Navbar(props) {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem>
+          <Avatar /> {window.sessionStorage.getItem("Name").charAt(0).toUpperCase() + window.sessionStorage.getItem("Name").slice(1)}
+        </MenuItem>      
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Settings fontSize="small" />
@@ -154,7 +144,6 @@ export default function Navbar(props) {
 
 Navbar.propTypes = {
     title: PropTypes.string,
-   
     report: PropTypes.string,
     projections: PropTypes.string,
     dispatch:PropTypes.string
@@ -162,7 +151,6 @@ Navbar.propTypes = {
 
 Navbar.defaultProps = {
     title: "Oswin",
-    
     report: "Reports",
     projections: "Projections",
     dispatch:"Dispatch"
