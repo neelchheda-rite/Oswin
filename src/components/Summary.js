@@ -1,10 +1,9 @@
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import axios from "axios";
-
 import InputLabel from "@mui/material/InputLabel";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import "../Css/Summary.css";
@@ -128,37 +127,37 @@ export default function Summary() {
     setRows((prevRows) => [...prevRows, createRandomRow()]);
   };
 
-  const productColumn = useMemo(
-    () =>
-      products[0]
-        ? Object.keys(products[0])
-            .filter((key) => key !== "rating" && key !== "image")
-            .map((key) => {
-              return {
-                Header: key[0].toUpperCase() + key.substring(1),
-                accessor: key,
-              };
-            })
-        : [],
-    [products]
-  );
-  const tableHooks = (hooks) => {
-    hooks.visibleColumns.unshift((columns) => [
-      {
-        id: "Check",
-        Header: "Check",
-        Cell: ({ row }) => (
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-        ),
-      },
-      ...columns,
-    ]);
-  };
+  // const productColumn = useMemo(
+  //   () =>
+  //     products[0]
+  //       ? Object.keys(products[0])
+  //           .filter((key) => key !== "rating" && key !== "image")
+  //           .map((key) => {
+  //             return {
+  //               Header: key[0].toUpperCase() + key.substring(1),
+  //               accessor: key,
+  //             };
+  //           })
+  //       : [],
+  //   [products]
+  // );
+  // const tableHooks = (hooks) => {
+  //   hooks.visibleColumns.unshift((columns) => [
+  //     {
+  //       id: "Check",
+  //       Header: "Check",
+  //       Cell: ({ row }) => (
+  //         <input
+  //           className="form-check-input"
+  //           type="checkbox"
+  //           value=""
+  //           id="flexCheckDefault"
+  //         />
+  //       ),
+  //     },
+  //     ...columns,
+  //   ]);
+  // };
 
   // const isEven = (idx) => idx % 2 === 0;
   useEffect(() => {

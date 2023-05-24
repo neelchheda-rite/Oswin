@@ -4,8 +4,9 @@ import About from "./components/About";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SideBar from "./components/User/SideBar";
-import { SideBarData } from "./components/Data/SideBarData";
+// import SideBar from "./components/User/SideBar";
+import SideBar from "./components/sidebar/Sidebar";
+import UserList from "./components/userList/UserList"
 import React from "react";
 import Summary from "./components/Summary";
 import { ToastContainer } from "react-toastify";
@@ -16,18 +17,7 @@ import Dispatch from "./components/Merge/Dispatch";
 function App() {
   const mode = "dark";
 
-  const UserRoutes = SideBarData.map((val) => {
-    const Component = val.title;
-    return (
-      <Route
-        key={val.link}
-        exact
-        path={val.link}
-        element={React.createElement(Component)}
-      />
-    );
-  });
-
+ 
   return (
     <>
       <BrowserRouter>
@@ -37,7 +27,6 @@ function App() {
             path="/"
             element={
               <div className="singlePage">
-                
                 <Login />
               </div>
             }
@@ -84,10 +73,11 @@ function App() {
               <div className="singlePage">
                 <Navbar mode={mode} />
                 <SideBar mode={mode} />
+                <UserList />
               </div>
             }
           >
-            <Route>{UserRoutes}</Route>
+            {/* <Route>{UserRoutes}</Route> */}
           </Route>
          
           <Route exact
