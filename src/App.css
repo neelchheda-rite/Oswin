@@ -9,10 +9,7 @@ body{
   height: 100vh;
   overflow-y: hidden;
 }
-.singlePage{
-  overflow: hidden;
-  height: 100vh;
-}
+
 .container{
   display: flex;
   margin-top: 10px;
