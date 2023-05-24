@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\Neel\\Desktop\\React",
+  "SelectedNode": "\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
