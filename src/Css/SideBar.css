@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin:0;
+    padding: 20px;
+    
+    
+     }
+
+.sidebar { 
+    position: absolute;
+    display: flex;
+    width: 150px;
+    height: 100vh;
+    color: rgb(228, 228, 228);
+    background-color: #002244;
+    overflow: initial;
+    overflow-y: hidden;
+
+    
+    
+} 
+.SideBarList {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+
+}
+.SideBarList .SideBarItem {
+   text-decoration: none;
+   color: rgb(228, 228, 228);
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    list-style-type: none;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.SideBarList .SideBarItem:hover {
+    background-color: rgb(27, 34, 41);
+   
+    animation-duration: 0.2s;
+    cursor: pointer;
+    color:white;
+    transform:scale(1.02)
+   
+    
+}
+ 
+#icon{
+    flex:30%;
+    display: grid;
+    place-items: center;
+}
+#title{
+    flex:70;
+
+}
+
+.collapsible .content {
+    padding: 6px;
+    background-color: #eeeeee;
+   
+    
+}
+
+.collapsible .header {
+    background-color: #dddddd;
+    padding: 6px;
+    cursor: pointer;
+}

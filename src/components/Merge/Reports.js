@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../../Css/SideBar.css";
 
 import { Link } from 'react-router-dom';
 import { Sidedata } from './Sidedata';
