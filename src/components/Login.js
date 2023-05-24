@@ -29,15 +29,15 @@ const defaultTheme = createTheme();
 
 export default function SignInSide() {
 
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     let navigate = useNavigate();
 
     const handleLoginSubmit = (event) => {
         event.preventDefault();
-        if (!email || !password) {
-            toast.error('Invalid Email or Password', {
+        if (!username || !password) {
+            toast.error('Invalid Username or Password', {
                 position: toast.POSITION.TOP_RIGHT,
                 toastId: 'log_in_error'
             });
@@ -45,10 +45,11 @@ export default function SignInSide() {
         // const data = new FormData(event.currentTarget);
         // setEmail(data.get('email'));
         // setPassword(data.get('password'));
-        Axios.post("http://restapi.adequateshop.com/api/authaccount/login", {
-            email: email,
+        Axios.post("https://localhost:44363/api/validateLogin" , {
+            userName: username,
             password: password
         }).then((response) => {
+            console.error(response.data);
             if (response.status === 200) {
                 window.sessionStorage.setItem('Name', response.data.data.Name);
                 console.log(response.status);
@@ -57,7 +58,6 @@ export default function SignInSide() {
                     toastId: 'log_in_success'
                 });
                 navigate('/user');
-
             }
         });
     };
@@ -115,10 +115,10 @@ export default function SignInSide() {
                                 {mt: 1}
                         }>
                             <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email"
-                                value={email}
+                                value={username}
                                 autoFocus
                                 onChange=
-                                {(e) => {setEmail(e.target.value);
+                                {(e) => {setUsername(e.target.value);
                                                                                                                                              }}/>
                             <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password"
                                 value={password}
