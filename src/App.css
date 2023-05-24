@@ -2,7 +2,6 @@ body::-webkit-scrollbar{
   display: none;
   overflow-y: hidden;
 }
-
 body{
  
   margin: 0;
