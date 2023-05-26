@@ -53,24 +53,16 @@ const navigation = [
     href: "/starter",
     icon: "bi bi-speedometer2",
   },
+ 
   {
-    title: "Alert",
-    href: "/alerts",
-    icon: "bi bi-bell",
-  },
-  {
-    title: "Badges",
-    href: "/badges",
+    title: "Projections",
+    href: "/projections",
     icon: "bi bi-patch-check",
   },
+  
   {
-    title: "Buttons",
-    href: "/buttons",
-    icon: "bi bi-hdd-stack",
-  },
-  {
-    title: "Cards",
-    href: "/cards",
+    title: "Summary",
+    href: "/summary",
     icon: "bi bi-card-text",
   },
   {

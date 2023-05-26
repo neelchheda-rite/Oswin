@@ -14,10 +14,10 @@ import {
   Button,
 } from "reactstrap";
 import Logo from "./Logo";
-import { ReactComponent as LogoWhite } from "../../../assets/images/logos/adminprowhite.svg";
-import user1 from "../../../assets/images/users/user4.jpg";
+import { ReactComponent as LogoWhite } from "../assets/images/logos/adminprowhite.svg";
+import user1 from "../assets/images/users/user4.jpg";
 
-const Topbar = () => {
+const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
@@ -33,8 +33,7 @@ const Topbar = () => {
     <Navbar color="white" light expand="md" className="fix-header">
       <div className="d-flex align-items-center">
         <div className="d-lg-block d-none me-5 pe-3">
-          <Logo /> {/* Company Logo  */}
-          
+          <Logo />
         </div>
         <NavbarBrand href="/">
           <LogoWhite className="d-lg-none" />
@@ -110,4 +109,4 @@ const Topbar = () => {
   );
 };
 
-export default Topbar;
+export default Header;

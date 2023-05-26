@@ -1,6 +1,8 @@
 .sidebarArea {
     flex-shrink: 0;
     width: $sidebarWidth;
+    position: fixed;
+    height: 100%;
     background-color: #002244;
     .nav-link {
       color: rgba(255, 255, 255, 0.5);
@@ -13,7 +15,7 @@
       }
     }
     .sidenav-bg .active {
-      background-color: $primary;
+      background-color: #002244;
       border-radius: $border-radius;
       color: white;
     }
