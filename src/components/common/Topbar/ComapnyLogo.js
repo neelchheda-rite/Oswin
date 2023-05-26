@@ -1,7 +1,7 @@
 import { ReactComponent as LogoDark } from "../../../assets/images/logos/companylogo.svg";
 import { Link } from "react-router-dom";
 
-const Logo = () => {
+const CompanyLogo = () => {
   return (
     <Link to="/">
       <LogoDark />
@@ -9,4 +9,4 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+export default CompanyLogo;

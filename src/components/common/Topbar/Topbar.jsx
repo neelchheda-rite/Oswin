@@ -13,7 +13,7 @@ import {
   Dropdown,
   Button,
 } from "reactstrap";
-import Logo from "./Logo";
+import CompanyLogo from "./ComapnyLogo";
 import { ReactComponent as LogoWhite } from "../../../assets/images/logos/adminprowhite.svg";
 import user1 from "../../../assets/images/users/user4.jpg";
 
@@ -33,7 +33,7 @@ const Topbar = () => {
     <Navbar color="white" light expand="md" className="fix-header">
       <div className="d-flex align-items-center">
         <div className="d-lg-block d-none me-5 pe-3">
-          <Logo /> {/* Company Logo  */}
+          <CompanyLogo /> {/* Company Logo  */}
           
         </div>
         <NavbarBrand href="/">
