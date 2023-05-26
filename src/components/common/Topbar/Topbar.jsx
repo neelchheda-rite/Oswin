@@ -14,11 +14,12 @@ import { useState } from "react";
 // import CompanyLogo from "./ComapnyLogo";
 import { ReactComponent as LogoWhite } from "../../../assets/images/logos/adminprowhite.svg";
 import user1 from "../../../assets/images/users/user4.jpg";
+import { useNavigate } from "react-router";
 
 const Topbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  const navigate = useNavigate();
   
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
@@ -27,6 +28,10 @@ const Topbar = () => {
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
+  const handleLogout=()=>{
+    window.sessionStorage.clear();
+    navigate('/login');
+  }
   return (
     <Navbar color="white" light expand="md" className="fix-header ">
       <div className="d-flex align-items-center">
@@ -72,14 +77,11 @@ const Topbar = () => {
               width="30"
             ></img>
           </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Info</DropdownItem>
-            <DropdownItem>My Account</DropdownItem>
-            <DropdownItem>Edit Profile</DropdownItem>
+          <DropdownMenu className="offset-my-1">
+            <DropdownItem><i className="bi bi-person-lines-fill"></i> My Profile</DropdownItem>
+            <DropdownItem><i className="bi bi-shield-fill"></i> Privacy</DropdownItem>
             <DropdownItem divider />
-            <DropdownItem>My Balance</DropdownItem>
-            <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
+            <DropdownItem onClick={handleLogout}><i className="bi bi-box-arrow-right"></i> Logout</DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </Collapse>

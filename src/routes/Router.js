@@ -1,35 +1,26 @@
 
 import { Navigate } from "react-router-dom";
-import Dashboard from "../components/Dashboard/Dashboard";
+//MAIN LAOUT OF THE PROJECT
+import MainLayout from "../components/MainLayout/MainLayout";
+//MAIN LAOUT OF THE PROJECT
+
+//CONTAINER PAGES
+import Reports from "../components/Reports/Reports";
 import Projections from "../components/Projections/Projections";
 import Summary from "../components/Summary/Summary";
 import Login from "../components/Login/Login";
-
-/****Layouts*****/
-import MainLayout from "../components/MainLayout/MainLayout";
+//CONTAINER PAGES
 
 
-
-
-/*****Routes******/
 const ThemeRoutes = [
   {
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Navigate to="/dashboard" /> },
-      { path: "/dashboard", exact: true, element: <Dashboard /> },
+      { path: "/", element: <Navigate to="/projections" /> },
       { path: "/projections", exact: true, element: <Projections /> },
-      { path: "/summary", exact: true, element: <Summary /> },
-    //   { path: "/about", exact: true, element: <About /> },
-    //   { path: "/alerts", exact: true, element: <Alerts /> },
-    //   { path: "/badges", exact: true, element: <Badges /> },
-    //   { path: "/buttons", exact: true, element: <Buttons /> },
-    //   { path: "/cards", exact: true, element: <Cards /> },
-    //   { path: "/grid", exact: true, element: <Grid /> },
-    //   { path: "/table", exact: true, element: <Tables /> },
-    //   { path: "/forms", exact: true, element: <Forms /> },
-    //   { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
+      { path: "/reports", exact: true, element: <Reports /> },
+      { path: "/summary", exact: true, element: <Summary /> }
     ],
   },{
     path: "/login",

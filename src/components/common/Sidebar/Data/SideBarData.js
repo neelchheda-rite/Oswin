@@ -3,12 +3,12 @@ export const navigation = [
   {
     title: "Projections",
     href: "/projections",
-    icon: "bi bi-patch-check",
+    icon: "bi bi-bullseye",
   },
     {
-      title: "Dashboard",
-      href: "/dashboard",
-      icon: "bi bi-speedometer2",
+      title: "Reports",
+      href: "/reports",
+      icon: "bi bi-file-earmark-bar-graph",
     },
     
     
