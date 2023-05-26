@@ -1,16 +1,16 @@
 
 export const navigation = [
-
+  {
+    title: "Projections",
+    href: "/projections",
+    icon: "bi bi-patch-check",
+  },
     {
       title: "Dashboard",
       href: "/dashboard",
       icon: "bi bi-speedometer2",
     },
-    {
-      title: "Projections",
-      href: "/projections",
-      icon: "bi bi-patch-check",
-    },
+    
     
     {
       title: "Summary",

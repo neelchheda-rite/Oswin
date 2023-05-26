@@ -7,12 +7,12 @@ import PrivateRoute from "../../PrivateRoute/PrivateRoute";
 const FullLayout = () => {
   return (
     <PrivateRoute>
-    <main>
+    <main className="">
       {/********header**********/}
       <Topbar />
       <div className="pageWrapper d-lg-flex">
         {/********Sidebar**********/}
-        <aside className="sidebarArea shadow" id="sidebarArea">
+        <aside className="sidebarArea shadow " id="sidebarArea">
           <Sidebar />
         </aside>
         {/********Content Area**********/}

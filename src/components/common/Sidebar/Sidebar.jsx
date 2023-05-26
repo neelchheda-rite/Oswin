@@ -10,8 +10,8 @@ const SidebarComponent = () => {
   let location = useLocation();
 
   return (
-    <div>
-      <div className="d-flex">
+    <div >
+      <div className="d-flex fixed-top">
         <Button
           color="white"
           className="ms-auto text-white d-lg-none"
@@ -19,11 +19,11 @@ const SidebarComponent = () => {
         >
           <i className="bi bi-x"></i>
         </Button>
-      </div>
+      </div >
       <div className="p-3 mt-2">
-        <Nav vertical className="sidebarNav">
+        <Nav vertical className="sidebarNav ">
           {navigation.map((navi, index) => (
-            <NavItem key={index} className="sidenav-bg">
+            <NavItem key={index} className="sidenav-bg ">
               <Link
                 to={navi.href}
                 className={
