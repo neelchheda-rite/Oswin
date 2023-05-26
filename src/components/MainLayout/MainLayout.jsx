@@ -2,9 +2,11 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../common/Sidebar/Sidebar";
 import Topbar from "../common/Topbar/Topbar";
 import { Container } from "reactstrap";
+import PrivateRoute from "../../PrivateRoute/PrivateRoute";
 
 const FullLayout = () => {
   return (
+    <PrivateRoute>
     <main>
       {/********header**********/}
       <Topbar />
@@ -22,6 +24,7 @@ const FullLayout = () => {
         </div>
       </div>
     </main>
+    </PrivateRoute>
   );
 };
 

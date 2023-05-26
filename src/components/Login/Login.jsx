@@ -16,7 +16,7 @@ import Axios from 'axios';
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from 'react-router-dom';
-import {useSessionStorage} from '../../utility/useSessionStorage';
+
 
 function Copyright(props) {
     return (
@@ -32,7 +32,7 @@ export default function SignInSide() {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [jwt, setJwt] = useSessionStorage("", "Name");
+  
 
     let navigate = useNavigate();
 

@@ -1,6 +1,8 @@
 
 import { Navigate } from "react-router-dom";
 import Dashboard from "../components/Dashboard/Dashboard";
+import Projections from "../components/Projections/Projections";
+import Summary from "../components/Summary/Summary";
 import Login from "../components/Login/Login";
 
 /****Layouts*****/
@@ -17,6 +19,8 @@ const ThemeRoutes = [
     children: [
       { path: "/", element: <Navigate to="/dashboard" /> },
       { path: "/dashboard", exact: true, element: <Dashboard /> },
+      { path: "/projections", exact: true, element: <Projections /> },
+      { path: "/summary", exact: true, element: <Summary /> },
     //   { path: "/about", exact: true, element: <About /> },
     //   { path: "/alerts", exact: true, element: <Alerts /> },
     //   { path: "/badges", exact: true, element: <Badges /> },
