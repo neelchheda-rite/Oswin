@@ -20,6 +20,7 @@
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "axios": "^1.4.0",
+        "bootstrap": "^5.2.3",
         "bootstrap-icons": "^1.10.5",
         "i": "^0.3.7",
         "react": "^18.2.0",
@@ -33,6 +34,7 @@
         "react-scrollbars-custom": "^4.1.1",
         "react-table": "^7.8.0",
         "react-toastify": "^9.1.2",
+        "reactstrap": "^9.1.10",
         "redux": "^4.2.1",
         "styled-component": "^2.8.0",
         "styled-components": "^5.3.10",
@@ -61,5 +63,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "sass": "^1.62.1"
     }
 }
