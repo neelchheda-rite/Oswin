@@ -15,6 +15,7 @@ import { useState } from "react";
 import { ReactComponent as LogoWhite } from "../../../assets/images/logos/adminprowhite.svg";
 import user1 from "../../../assets/images/users/user4.jpg";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const Topbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,8 +81,8 @@ const Topbar = () => {
           </DropdownToggle>
          
           <DropdownMenu className="offset-my-1">
-            <DropdownItem><i className="bi bi-person-lines-fill"></i> My Profile</DropdownItem>
-            <DropdownItem><i className="bi bi-shield-fill"></i> Privacy</DropdownItem>
+            <DropdownItem to="/profile"><i className="bi bi-person-lines-fill"></i> <Link className="link" to="profile">My Profile </Link></DropdownItem>
+            <DropdownItem to="/privacy"><i className="bi bi-shield-fill"></i> <Link className="link" to="privacy">Privacy</Link></DropdownItem>
             <DropdownItem divider />
             <DropdownItem onClick={handleLogout}><i className="bi bi-box-arrow-right"></i> Logout</DropdownItem>
           </DropdownMenu>
