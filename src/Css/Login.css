@@ -1,6 +1,0 @@
-body{
-    z-index: auto;
-}
-body::-webkit-scrollbar{
-    display: none;
-}
