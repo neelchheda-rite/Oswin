@@ -3,24 +3,23 @@ import {
   Navbar,
   Collapse,
   Nav,
-
   NavbarBrand,
- 
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
   Dropdown,
   Button,
 } from "reactstrap";
+import { useState } from "react";
 // import CompanyLogo from "./ComapnyLogo";
 import { ReactComponent as LogoWhite } from "../../../assets/images/logos/adminprowhite.svg";
 import user1 from "../../../assets/images/users/user4.jpg";
 
 const Topbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
-
+  
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
     setIsOpen(!isOpen);
