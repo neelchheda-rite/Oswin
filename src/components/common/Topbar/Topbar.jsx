@@ -68,6 +68,7 @@ const Topbar = () => {
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
         </Nav>
+       
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="transparent">
             <img
@@ -77,6 +78,7 @@ const Topbar = () => {
               width="30"
             ></img>
           </DropdownToggle>
+         
           <DropdownMenu className="offset-my-1">
             <DropdownItem><i className="bi bi-person-lines-fill"></i> My Profile</DropdownItem>
             <DropdownItem><i className="bi bi-shield-fill"></i> Privacy</DropdownItem>
@@ -84,6 +86,7 @@ const Topbar = () => {
             <DropdownItem onClick={handleLogout}><i className="bi bi-box-arrow-right"></i> Logout</DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        
       </Collapse>
     </Navbar>
   );

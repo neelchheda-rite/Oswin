@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'; //HANDLING DOM(DOCUMENT OBJECT MODULE ELEMENTS)
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
-import "./assets/scss/style.scss";
+import "./assets/scss/style.scss"; // GLOBAL CSS FILE USING SCSS
+import { ToastContainer} from 'react-toastify'; //TOAST CONTAINER TO DISPLAY THEW TOAST NOTIFICATION
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,10 +13,8 @@ root.render (
         <React.StrictMode>
                 <App/>
         </React.StrictMode>
+        <ToastContainer autoClose={1500} pauseOnFocusLoss={ true} /> {/* Autoclose is set to 1500 ms and PauseonFocusLoss means that the timer wont stop if the toast is hovered */}
     </BrowserRouter>
-);
+    );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

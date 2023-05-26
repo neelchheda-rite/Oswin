@@ -2,7 +2,6 @@
 import { useRoutes} from "react-router-dom";
 import Themeroutes from "./routes/Router";
 
-
 function App() {
     const routing = useRoutes(Themeroutes);
     return (
@@ -11,6 +10,5 @@ function App() {
         </div>
     );
 }
-
 
 export default App;
